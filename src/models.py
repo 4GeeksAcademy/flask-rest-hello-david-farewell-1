@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import String, Boolean, Enum
-from sqlalchemy.orm import Mapped, mapped_column, relationship, ForeignKey
+from sqlalchemy import String, Boolean, Enum, ForeignKey  # ✅ Aquí se importa correctamente ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum
 
 db = SQLAlchemy()
@@ -36,7 +36,7 @@ class User(db.Model):
 class Post(db.Model):
     id: Mapped[int] = mapped_column(primary_key=True)
     user_id: Mapped[int] = mapped_column(ForeignKey('user.id'))
-    
+
     # relation
     user = relationship('User', back_populates='posts')
     comments = relationship('Comment', back_populates='post')
