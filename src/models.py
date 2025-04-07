@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import String, Boolean, Enum, ForeignKey  # ✅ Aquí se importa correctamente ForeignKey
+from sqlalchemy import String, Boolean, Enum, ForeignKey  # ForeignKey
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum
 
